@@ -1,0 +1,5 @@
+SELECT IF(COUNT(*) = 1, num, NULL) AS num
+FROM MyNumbers
+GROUP BY num
+ORDER BY COUNT(*) ASC, num DESC
+LIMIT 1;

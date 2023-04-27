@@ -4,15 +4,14 @@ public:
     {
         int buy = INT_MIN;
         int cell = 0;
-        int prevBuy;
         int prevCell = 0;
 
         for (const auto& price : prices)
         {
-            prevBuy = buy;
+            int tmp = buy;
             buy = max(buy, prevCell - price);
             prevCell = cell;
-            cell = max(cell, prevBuy + price);
+            cell = max(cell, tmp + price);
         }
 
         return cell;
